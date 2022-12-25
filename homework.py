@@ -4,7 +4,7 @@ from typing import Dict, Type
 
 @dataclass
 class InfoMessage:
-
+    """Информационное сообщение о тренировке."""
     training_type: str
     duration: float
     distance: float
@@ -15,7 +15,7 @@ class InfoMessage:
                     "Дистанция: {distance:.3f} км; "
                     "Ср. скорость: {speed:.3f} км/ч; "
                     "Потрачено ккал: {calories:.3f}.")
-    """Информационное сообщение о тренировке."""
+
     def get_message(self) -> str:
         f_message = self.MESSAGE.format(training_type=self.training_type,
                                         duration=self.duration,
@@ -42,13 +42,13 @@ class Training:
 
     def get_distance(self) -> float:
         """Получить дистанцию в км."""
-        self.distance1 = self.action * self.LEN_STEP / self.M_IN_KM
-        return self.distance1
+        distance1 = self.action * self.LEN_STEP / self.M_IN_KM
+        return distance1
 
     def get_mean_speed(self) -> float:
         """Получить среднюю скорость движения."""
-        self.mean_spead = self.get_distance() / self.duration
-        return self.mean_spead
+        mean_spead1 = self.get_distance() / self.duration
+        return mean_spead1
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
